@@ -1,12 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <title>Modelo Secuencial Simple</title>
+  <meta charset="UTF-8">
+  <title>Modelo Y = 2X + 6</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+  <script src="modelo.js" defer></script>
+  <style>
+    body {text-align: center; font-family: Georgia, sans-serif; padding: 20px; background-color: lightslategray;}
+    input, button { font-size: 16px; margin: 5px; padding: 5px; }
+  </style>
 </head>
 <body>
-    <h1>Hola mundo!</h1>
+    <h1>TensorFlow.js Ejemplo</h1>
+    <!-- 
+    1)_ Realice un sitio donde se entrene un modelo secuencial 
+    para la formula  y = 2x+6  (que nos comunique cuando termina 
+    el entrenamiento y nos diga que el modelo ya esta listo para 
+    ser utilizado).
+    2)_ Pedir por pantalla al usuario un numero para el valor de X 
+    para que el el modelo prediga el valor de Y
+    
+    Deberá entrenar el modelo a partir de el valor -6 (menos seis) 
+    con 9 valores de muestra, los tensores tendrán entonces la forma 
+    [9,1] entrenando como mínimo 350 épocas. 
+    -->
+  <h2>Entrenando modelo para Y = 2X + 6</h2>
+  <p id="estado">Entrenando el modelo... por favor espere.</p>
+
+  <div id="prediccion" style="display:none;">
+    <label>Ingresa un valor para X: </label>
+    <input type="number" id="inputX">
+    <button onclick="predecir()">Predecir Y</button>
+    <p id="resultado"></p>
+  </div>
 </body>
 </html>
